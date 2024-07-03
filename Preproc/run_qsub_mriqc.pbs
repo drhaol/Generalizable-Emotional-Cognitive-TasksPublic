@@ -1,0 +1,9 @@
+#! /bin/bash
+
+#PBS -N mriqc_CBD_05
+#PBS -l nodes=1:ppn=24
+#PBS -q short
+
+cd /brain/iCAN/mriqc
+export PATH=/opt/software/singularity-2.4.6-20190826/bin/:$PATH
+singularity run /brain/iCAN/mriqc/singularity-mriqc-191003-highserver.simg /brain/iCAN/mriqc/bids_CBD_05 /brain/iCAN/mriqc/mriqc_CBD_05 participant -w /brain/iCAN/mriqc/cache_CBD_05

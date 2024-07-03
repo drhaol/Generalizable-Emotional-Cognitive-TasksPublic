@@ -1,0 +1,9 @@
+#! /bin/bash
+
+#PBS -N fmriprep_rerun_03
+#PBS -l nodes=1:ppn=24
+#PBS -q short
+
+cd /brain/iCAN/fmriprep_rerun
+export PATH=/opt/software/singularity-2.4.6-20190826/bin/:$PATH
+singularity run --cleanenv /brain/iCAN/fmriprep/singularity-fmriprep-1.4.1-highserver.simg /brain/iCAN/fmriprep_rerun/bids_rerun_03 /brain/iCAN/fmriprep_rerun/output_rerun_03 participant -w /brain/iCAN/fmriprep_rerun/cache_rerun_03 --output-spaces MNI152NLin6Asym:res-2 --use-aroma --fs-no-reconall --fs-license-file /brain/iCAN/fmriprep/fs-license.txt
